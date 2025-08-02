@@ -52,7 +52,7 @@ function App() {
               .then(data => {
                 // Update the shortened URL state with the response from the backend
                 if (data.short_url){ 
-                  const baseUrl = 'http://localhost:3000/api/shorturl/';
+                  const baseUrl = `${process.env.REACT_APP_BACKEND_URL}/api/shorturl/`;
                   setShortenedUrl(baseUrl + data.short_url);
                   setInputUrl(''); // Clear the input field 
                 }
